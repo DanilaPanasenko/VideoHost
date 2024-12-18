@@ -1,0 +1,10 @@
+{% extends 'default.html' %}
+
+{% block content %}
+{% for g in genre_films %}
+    <div class="card">
+        <img src="{{ g.poster.url}}" alt="">
+        <a href="{% url 'video' g.id %}">{{g.title}}</a>
+    </div>
+{% endfor %}
+{% endblock content %}

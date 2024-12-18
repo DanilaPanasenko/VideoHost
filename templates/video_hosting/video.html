@@ -1,0 +1,43 @@
+{% extends 'default.html' %}
+
+{% block content %}
+    <div class="card">
+        <img src="{{ video.poster.url}}" alt="">
+        <h2>{{video.title}}</h2>
+    </div>
+<div>{{video.description}}</div>
+
+<div>
+<h6>Жанр:</h6>
+    {% for genre in video.genre.all %}
+        <a class="dropdown-item" href="{% url 'genre_list' genre.id %}">{{genre}}</a>
+    {% endfor %}
+<h6>Год:</h6>
+{{video.year}}
+<h6>Страна:</h6>
+{{video.country}}
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <video
+            id="my-video"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            data-setup="{}"
+          >
+            <source src="{% url 'stream' video.id %}" type="video/mp4" />
+            <source src="{% url 'stream' video.id %}" type="video/webm" />
+<!--    <p class="vjs-no-js">-->
+<!--      To view this video please enable JavaScript, and consider upgrading to a-->
+<!--      web browser that-->
+<!--      <a href="https://videojs.com/html5-video-support/" target="_blank"-->
+<!--        >supports HTML5 video</a-->
+<!--      >-->
+<!--    </p>-->
+        </video>
+     </div>
+</div>
+{% endblock content %}

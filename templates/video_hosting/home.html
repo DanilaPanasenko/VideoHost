@@ -1,0 +1,12 @@
+{% extends 'default.html' %}
+
+
+{% block content %}
+
+{% for video in video_list %}
+    <div class="card">
+        <img src="{{ video.poster.url}}" alt="">
+        <a href="{% url 'video' video.id %}">{{video.title}}</a>
+    </div>
+{% endfor %}
+{% endblock content %}
