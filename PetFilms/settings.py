@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
 
     'videoapp',
+
+    'userreg',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +140,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SITE_ID = 1
+# -------------------------------------
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'danilapanasenko0'
+EMAIL_HOST_PASSWORD = 'qslhtjmfrwwxldsw'
+EMAIL_USE_SSL = True
+# DEFAULT_FROM_EMAIL = 'danilapanasenko0@yandex.ru'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
