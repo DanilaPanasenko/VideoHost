@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'userreg',
     'crispy_forms',
     'crispy_bootstrap4',
+
+    'commentcreate'
 ]
 
 MIDDLEWARE = [
@@ -144,6 +146,7 @@ SITE_ID = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # LOGOUT_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'register'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465

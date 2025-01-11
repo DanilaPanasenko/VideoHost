@@ -17,6 +17,9 @@
 <h6>Страна:</h6>
 {{video.country}}
 </div>
+<div>
+    <a class="dropdown-item" href="{% url 'comment_create' video.id %}">Комментарии к фильму</a>
+</div>
 <div class="row">
     <div class="col-md-12 col-sm-12">
         <video

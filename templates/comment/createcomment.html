@@ -1,0 +1,21 @@
+{% extends 'default.html' %}
+
+{% block content %}
+<div>
+    <h3>Создать комментарий</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Откликнуться">
+    </form>
+</div>
+
+<div class="card">
+    <h3>Комментарии:</h3>
+    {% for comment in comments %}
+            <p>{{ comment.user }} | {{ comment.some_datatime|date:'d M Y' }} </p>
+            {{ comment.text }}
+            <hr>
+    {% endfor %}
+</div>
+{% endblock content %}
