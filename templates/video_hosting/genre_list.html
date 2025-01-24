@@ -2,9 +2,11 @@
 
 {% block content %}
 {% for g in genre_films %}
+<a href="{% url 'video' g.id %}" style="display: block;">
     <div class="card">
         <img src="{{ g.poster.url}}" alt="">
-        <a href="{% url 'video' g.id %}">{{g.title}}</a>
+        {{g.title}}
     </div>
+</a>
 {% endfor %}
 {% endblock content %}

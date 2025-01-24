@@ -4,9 +4,11 @@
 {% block content %}
 
 {% for video in video_list %}
+<a href="{% url 'video' video.id %}" style="display: block;">
     <div class="card">
         <img src="{{ video.poster.url}}" alt="">
-        <a href="{% url 'video' video.id %}">{{video.title}}</a>
+        {{video.title}}
     </div>
+</a>
 {% endfor %}
 {% endblock content %}

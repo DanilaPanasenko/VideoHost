@@ -15,15 +15,28 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                            {% if user.is_authenticated %}
-                                <li class="nav-item" style="color: white;">{{user}}</li>
-                                <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-user"></span> Log out </a></li>
-                            {% else %}
-                                <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                                <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Log in</a></li>
-                            {% endif %}
-                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <form class="d-flex">
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                                            <span class="glyphicon glyphicon-user"></span>{{user}} | Log out
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a a class="nav-link active" aria-current="page" href="{% url 'register' %}">
+                                            <span class="glyphicon glyphicon-user"></span> Sign up
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a a class="nav-link active" aria-current="page" href="{% url 'login' %}">
+                                            <span class="glyphicon glyphicon-log-in"></span>Log in
+                                        </a>
+                                    </li>
+                                {% endif %}
+                        </form>
+                    </ul>
                 </div>
             </div>
         </nav>
